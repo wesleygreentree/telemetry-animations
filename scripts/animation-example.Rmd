@@ -37,8 +37,13 @@ tags <- readRDS("data/example-tags.RDS")
 ```
 
 ```{r Make transition layer}
-ocean <- sf::read_sf("data/comox-ocean-shapefile.shp") # this is a shapefile of the ocean, not of land. Can manually process a shapefile of land and invert it to be a shapefile of the ocean.
+
+# load shapefile
+ocean <- sf::read_sf("data/comox-ocean-shapefile.shp") 
+# this is a shapefile of the ocean, not of land. Can manually process a shapefile of land and invert it to be a shapefile of the ocean.
 # Want a very fine-scale shapefile, so that receivers close to shore don't end up on land
+# Full shapefile for Canadian waters is available from https://open.canada.ca/data/en/dataset/6c78fb2f-d23b-45b4-b3af-cc6f6cc4fff8
+
 
 # view shapefile and straight-line paths between detections of each tag
 ggplot() +
